@@ -16,6 +16,6 @@ Vagrant.configure(2) do |config|
     # Add missing symlinks to ccache dir
     (cd /usr/lib/ccache; if [ ! -f cc ]; then sudo ln -s ../../bin/ccache cc; fi)
     (cd /usr/lib/ccache; if [ ! -f c++ ]; then sudo ln -s ../../bin/ccache c++; fi)
-    ccache -M 5G
+    sudo -u vagrant ccache -M 5G
   SHELL
 end
